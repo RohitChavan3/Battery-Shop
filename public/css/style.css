@@ -132,3 +132,42 @@ footer {
   padding: 1rem 0;
   margin-top: 2rem;
 }
+
+
+.carimage {
+width: 64px;
+height: 46px;
+float: left;
+}
+
+.inverter {
+width: 64px;
+height: 46px;
+}
+
+.bikeimage {
+width: 64px;
+height: 46px;
+}
+
+.invandbattery{
+width: 64px;
+height: 46px;
+}
+
+.icon {
+text-align: center;
+}
+
+.productbox {
+  display: flex;             /* Arrange images in a row */
+
+  gap: 20px;                 /* Space between images */
+  flex-wrap: wrap;           /* Wrap to next line if not enough space */
+  padding: 20px;
+}
+
+.choose{
+  
+  background: rgb(245, 245, 247);
+}
