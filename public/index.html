@@ -4,22 +4,71 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Your Battery Shop</title>
-  <link rel="stylesheet" href="/css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="/style_1.css">
+  
+  
+
 </head>
 <body>
   <header>
-    <h1>Welcome to  Battery-24h</h1>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/about">About Us</a>
-      <a href="/products">Products</a>
-      <a href="/contact">Contact</a>
-    </nav>
+  <img src="F:\Logo.jpg" class="logo"/>
+    <h1>Battery-24h</h1>
+
   </header>
+  
+  <nav class="navbar navbar-expand-sm">
+  <div class="navcontainer">
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+	  <li class="nav-item">
+	  <a class="nav-link" href="#">Home</a>
+	  </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Batteries</a>
+		    <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Link</a></li>
+            <li><a class="dropdown-item" href="#">Another link</a></li>
+            <li><a class="dropdown-item" href="#">A third link</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Inventors</a>
+		  <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Link</a></li>
+            <li><a class="dropdown-item" href="#">Another link</a></li>
+            <li><a class="dropdown-item" href="#">A third link</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Services</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Link</a></li>
+            <li><a class="dropdown-item" href="#">Another link</a></li>
+            <li><a class="dropdown-item" href="#">A third link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<video autoplay muted loop playsinline style="width: 100%; height: auto;">
+  <source src="/video/BatteryVideo.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+  
+
+	
 
   <main>
     <section>
-		<div class="myproducts">
+	<div class="myproducts">
       <h2>Our Products</h2>
 	     <div class="productbox">
 	         <a class="catbox" href="https://m.media-amazon.com/images/I/71Hw8a8FS3L.jpg">
@@ -50,11 +99,10 @@
          <p>Explore our wide range of batteries suitable for various applications.</p>
       <!-- Add product highlights here -->
 	  </div>
-     
     </section>
 
     <section>
-		<div class="choose">
+	<div class="choose">
       <h2>Why Choose Us?</h2>
       <ul>
         <li>
@@ -78,12 +126,14 @@
 		<p>We prioritize your experience. Our 5-star ratings and repeat customers are a testament to our commitment.</p>
 		</li>
       </ul>
-   
     </section>
+	</div>
   </main>
 
   <footer>
     <p>&copy; 2025 Your Battery Shop. All rights reserved.</p>
   </footer>
+  
+  
 </body>
 </html>
