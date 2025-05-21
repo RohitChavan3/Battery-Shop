@@ -240,6 +240,20 @@ text-align: center;
   background: rgb(230, 230, 235)
 }
 
+.full-width-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+
+.main-section {
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
 
 
 
