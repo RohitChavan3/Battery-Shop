@@ -256,11 +256,13 @@ text-align: center;
   text-align: center;
 }
 
-.why-choose-us h2 {
+.choose {
   font-size: 2.5rem;
   margin-bottom: 40px;
   color: #003366;
+  text-align: center;
 }
+
 
 .reasons {
   display: flex;
@@ -287,8 +289,16 @@ text-align: center;
   height: 60px;
   object-fit: contain;
   margin-bottom: 20px;
+  margin: 0 auto 20px auto;
 }
 
+.images {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 20px;
+  margin: 0 auto 20px auto;
+}
 .reason-card h3 {
   font-size: 1.3rem;
   margin-bottom: 10px;
