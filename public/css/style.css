@@ -310,6 +310,134 @@ text-align: center;
   color: #333;
 }
 
+.footer {
+  background-color: #111;
+  color: white;
+  padding: 50px 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-section {
+  flex: 1 1 22%;
+  max-width: 22%;
+  min-width: 220px;
+  padding: 0 10px;
+}
+
+.footer-section h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  line-height: 2;
+  text-align: left;
+}
+
+.footer-section ul li {
+  color: #e62e2e;
+}
+
+.footer-section p {
+  line-height: 1.6;
+  text-align: left;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+/* Top bar above header */
+.top-header {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 5px 20px;
+  font-size: 14px;
+  text-align: right;
+}
+
+.top-header a {
+  color: white;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.top-header strong {
+  color: red;
+}
+
+/* Header contact info bar */
+.header-contact {
+  background-color: #2a2a2a;
+  color: white;
+  padding: 15px 0;
+}
+
+.header-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+  flex-wrap: wrap;
+}
+
+.header-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.header-item .icon {
+  font-size: 20px;
+  color: red;
+}
+
+.header-item.phone {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.call-box {
+  background-color: red;
+  padding: 10px 20px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  font-weight: bold;
+}
+
+.call-icon {
+  background-color: white;
+  color: red;
+  padding: 8px;
+  border-radius: 50%;
+  font-size: 16px;
+}
+
+.number {
+  font-size: 16px;
+}
+
 
 
 
