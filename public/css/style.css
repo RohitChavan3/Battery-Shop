@@ -70,11 +70,9 @@ gap: 50px;
 
 .navcontainer{
   display: flex;
-  padding-right: 120px;
-  padding-left: 120px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding: 10px 120px; /* top/bottom 10px, left/right 120px */
   background-color: white;
+  align-items: center;
  /* background: linear-gradient(270deg, #1e90ff, #4169e1, #00008b);
   background-size: 600% 600%;
   animation: gradientShift 8s ease infinite;
@@ -96,7 +94,7 @@ header {
   animation: animateBlack 10s ease infinite;
   background-size: 600% 600%;
   color: white;
-  padding: 1rem 1rem;
+  padding: 0rem 0rem;
 }
 
 @keyframes animateBlack {
@@ -107,7 +105,7 @@ header {
 
 header h1 {
   font-size: 2.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0rem;
 }
 
 
@@ -180,35 +178,19 @@ form button:hover {
   background-color: #d89e00;
 }
 
-
-
-.myproducts{
-margin-left: 10px;
-}
+/* Footer */
 
 
 .logo{
-width: auto;
-height: 67px;
-float: left;
-}
-
-
-.carimage {
 width: 70px;
 height: 67px;
 float: left;
+  display: block;
+  margin: 0;
+  padding: 0;
 }
 
-.inverter {
-width: 70px;
-height: 60px;
-}
 
-.bikeimage {
-width: 70px;
-height: 60px;
-}
 
 .invandbattery{
 width: 70px;
@@ -219,39 +201,28 @@ height: 60px;
 text-align: center;
 }
 
-.productbox {
-  display: flex;             /* Arrange images in a row */
-  gap: 30px;                 /* Space between images */
-  flex-wrap: wrap;           /* Wrap to next line if not enough space */
-  padding: 20px;
-  
-}
+
+
 
 .full-width-video {
-  width: 100%;
+  width: 100vw;
   height: auto;
   display: block;
   object-fit: cover;
 }
 
+.choose {
 
-.main-section {
-  width: 100%;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #003366;
+  text-align: center;
+
 }
 
 .why-choose-us {
   padding: 60px 20px;
   background-color: #f5f7fa;
-  text-align: center;
-}
-
-.choose {
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-  color: #003366;
   text-align: center;
 }
 
@@ -285,12 +256,15 @@ text-align: center;
 }
 
 .images {
+
   width: 60px;
   height: 60px;
   object-fit: contain;
   margin-bottom: 20px;
   margin: 0 auto 20px auto;
+
 }
+
 .reason-card h3 {
   font-size: 1.3rem;
   margin-bottom: 10px;
@@ -431,8 +405,126 @@ text-align: center;
 }
 
 
+.what-we-provide {
+  padding: 60px 20px;
+  background-color: #f0f4f8;
+  text-align: center;
+}
+
+.what-we-provide h2 {
+  font-size: 2.5rem;
+  color: #003366;
+  margin-bottom: 40px;
+}
+
+.provide-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.provide-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 240px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.provide-card:hover {
+  transform: translateY(-5px);
+}
+
+.provide-card img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.provide-card h3 {
+  font-size: 1.3rem;
+  color: #0055aa;
+  margin-bottom: 10px;
+}
+
+.provide-card p {
+  font-size: 0.95rem;
+  color: #333;
+}
 
 
+.provide-buttons {
+  margin-bottom: 40px;
+}
+
+.provide-btn {
+  display: inline-block;
+  background-color: #0055aa;
+  color: #fff;
+  padding: 12px 28px;
+  margin: 10px;
+  font-size: 16px;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.provide-btn:hover {
+  background-color: #003f80;
+}
+
+.our-services {
+  padding: 60px 20px;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.our-services h2 {
+  font-size: 2.4rem;
+  color: #003366;
+  margin-bottom: 40px;
+}
+
+.services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.service-card {
+  background: #f8f9fb;
+  padding: 25px;
+  width: 240px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-card img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+  object-fit: contain;
+}
+
+.service-card h3 {
+  font-size: 1.2rem;
+  color: #0055aa;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  color: #444;
+}
 
 
 
