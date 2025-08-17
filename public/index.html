@@ -105,55 +105,80 @@
 
   <main>
     
-	<section class="what-we-provide">
-  <h2>What We Provide</h2>
-  <div class="provide-buttons">
-  <a href="#sale-section" class="provide-btn">Sale</a>
-  <a href="#services-section" class="provide-btn">Services</a>
+<section class="what-we-provide">
+<h2 class="what-we-provide-heading">What We Provide</h2>
+
+<div class="provide-buttons">
+  <button class="provide-btn" onclick="showCards('sale')">Sale</button>
+  <button class="provide-btn" onclick="showCards('services')">Services</button>
 </div>
-  <div class="provide-grid">
-    <div class="provide-card">
-      <img src="https://www.shutterstock.com/shutterstock/photos/2224543381/display_1500/stock-photo-car-battery-charger-icon-d-design-for-application-and-website-presentation-2224543381.jpg" alt="Car Battery">
-      <h3>Car Batteries</h3>
-      <p>Reliable and long-lasting batteries for all car models.</p>
-    </div>
-    <div class="provide-card">
-      <img src="https://thumbs.dreamstime.com/b/electric-motorcycle-icon-sleek-illustration-generated-ai-perfect-websites-apps-marketing-materials-related-to-384643700.jpg" alt="Bike Battery">
-      <h3>Bike Batteries</h3>
-      <p>High-performance bike batteries with warranty and doorstep service.</p>
-    </div>
-    <div class="provide-card">
-      <img src="https://cdn-icons-png.flaticon.com/512/4539/4539523.png" alt="Inverter Battery">
-      <h3>Inverter Batteries</h3>
-      <p>Powerful inverter batteries for uninterrupted home and office backup.</p>
-    </div>
-    </section>
-	
-	<section id="services-section" class="our-services">
-  <h2>Our Services</h2>
-  <div class="services-grid">
-    <div class="service-card">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBMa1zutGKK3iJ0yv4TtFilV7vc--1Z6AUIA&s" alt="On Call Service">
-      <h3>On Call</h3>
-      <p>Our team is just a call away to help with your battery needs, no matter the time or place.</p>
-    </div>
-    <div class="service-card">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7tLyMzSILkN-pYn_8b9ca-16yeA_l_ByKLQ&s" alt="Roadside Assistance">
-      <h3>Road Side Assistance</h3>
-      <p>Stranded with a dead battery? We’ll reach you quickly and get you back on the road in no time.</p>
-    </div>
-    <div class="service-card">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWU-fAM0Q16z6g5O1AFXPygY8z9n7o-lu8nbvZkmrBdkuV-PEU8oX55RvnD3U8BtG9P_Q&usqp=CAU" alt="Installation">
-      <h3>Installations</h3>
-      <p>We provide expert installation for car, bike, inverter, and solar batteries at your location.</p>
-    </div>
-    <div class="service-card">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVfeHRR9eY-D4sfjHC7QvfWdC1Bl7PN21_PleLul-AfIkCEvXCwt3zDESLQqikVTNwiVs&usqp=CAU" alt="Maintenance">
-      <h3>Maintenance</h3>
-      <p>We ensure long battery life with scheduled inspections, testing, and fluid level checks.</p>
-    </div>
+
+<div id="sale-cards" class="cards-container">
+  <div class="card">
+    <img src="https://www.shutterstock.com/shutterstock/photos/2224543381/display_1500/stock-photo-car-battery-charger-icon-d-design-for-application-and-website-presentation-2224543381.jpg" alt="Car Battery" class="card-icon">
+    <h3 class="card-title">Car Batteries</h3>
+    <p>Reliable and long-lasting batteries for all car models.</p>
   </div>
+
+  <div class="card">
+    <img src="https://thumbs.dreamstime.com/b/electric-motorcycle-icon-sleek-illustration-generated-ai-perfect-websites-apps-marketing-materials-related-to-384643700.jpg" alt="Bike Battery" class="card-icon">
+    <h3 class="card-title">Bike Batteries</h3>
+    <p>High-performance bike batteries with warranty and doorstep service.</p>
+  </div>
+
+  <div class="card">
+    <img src="https://cdn-icons-png.flaticon.com/512/4539/4539523.png" alt="Inverter Battery" class="card-icon">
+    <h3 class="card-title">Inverter Batteries</h3>
+    <p>Powerful inverter batteries for uninterrupted home and office backup.</p>
+  </div>
+</div>
+
+
+
+
+  <!-- Services Cards -->
+<div id="services-cards" class="cards-container" style="display: none;">
+  <div class="card">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWU-fAM0Q16z6g5O1AFXPygY8z9n7o-lu8nbvZkmrBdkuV-PEU8oX55RvnD3U8BtG9P_Q&usqp=CAU" alt="Installation" class="card-icon">
+    <h3 class="card-title">Installation</h3>
+    <p>Professional battery installation at your location.</p>
+  </div>
+
+  <div class="card">
+    <img src="/images/JumpStart.png" alt="Jump Start" class="card-icon">
+    <h3 class="card-title">Jump Start</h3>
+    <p>Quick jump start service to get your vehicle running again.</p>
+  </div>
+
+  <div class="card">
+    <img src="/images/BatteryCharge.png" alt="Battery Charging" class="card-icon"> 
+    <h3 class="card-title">Battery Charging</h3>
+    <p>Fast and safe battery charging service for all vehicles.</p>
+  </div>
+
+  <div class="card">
+    <img src="https://en.pimg.jp/075/130/425/1/75130425.jpg" alt="Service Battery" class="card-icon">
+    <h3 class="card-title">Service Battery</h3>
+    <p>Complete battery checkup and maintenance service.</p>
+  </div>
+</div>
+
 </section>
+
+<script>
+  function showCards(type) {
+    const sale = document.getElementById("sale-cards");
+    const services = document.getElementById("services-cards");
+
+    if (type === "sale") {
+      sale.style.display = "flex";
+      services.style.display = "none";
+    } else if (type === "services") {
+      sale.style.display = "none";
+      services.style.display = "flex";
+    }
+  }
+</script>
 
 	
 	<div class="choose">
