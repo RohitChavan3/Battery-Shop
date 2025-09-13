@@ -1,0 +1,88 @@
+/* Table Row */
+.battery-row {
+  display: grid;
+  grid-template-columns: 150px 1.5fr 100px 120px 120px 2fr; /* Desktop layout */
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding: 15px;
+  background: #fff;
+}
+
+.battery-row:last-child {
+  border-bottom: none;
+}
+
+/* Header row */
+.battery-row.header {
+  background: #0056b3;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  grid-template-columns: 150px 1.5fr 100px 120px 120px 2fr;
+}
+
+/* Cell styles */
+.battery-row div {
+  padding: 0 10px;
+  text-align: center;
+}
+
+.battery-row img {
+  width: 120px;
+  height: auto;
+  border-radius: 6px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* ✅ Responsive for Mobile */
+@media (max-width: 768px) {
+  .battery-row,
+  .battery-row.header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    padding: 15px;
+  }
+
+  .battery-row.header {
+    display: none; /* Hide header row on small screens */
+  }
+
+  .battery-row div {
+    width: 100%;
+    border-bottom: 1px solid #eee;
+    padding: 8px 0;
+  }
+
+  .battery-row div:last-child {
+    border-bottom: none;
+  }
+
+  .battery-row img {
+    margin-bottom: 10px;
+  }
+  
+.header-with-icon {
+  display: flex;
+  align-items: center;   /* align icon and text in middle */
+  gap: 12px;             /* spacing between icon and text */
+  margin: 20px 0;
+}
+
+.bike-icon {
+  width: 50px;   /* adjust icon size */
+  height: auto;
+}
+
+.header-with-icon h1 {
+  color: #0056b3;  /* blue text */
+  font-size: 28px;
+  margin: 0;
+}
+
+
+
+
+
