@@ -463,6 +463,28 @@ margin-top: 0;
   }
 }
 
+.breadcrumb-section {
+  background-color: #ff3838; /* red background */
+  width: 50%; /* half of the screen width */
+  padding: 20px 0;
+  clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%); /* angled right edge */
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+}
+
+.breadcrumb-container {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.breadcrumb-current {
+  font-size: 15px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
 /* Hide contact details on mobile view */
 @media (max-width: 768px) {
    .header-contact{
