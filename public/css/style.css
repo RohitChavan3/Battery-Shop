@@ -658,4 +658,15 @@ text-align: center;
     padding: 15px 10px;
   }
 }
+
+/* Hide contact details on mobile view */
+@media (max-width: 768px) {
+  .header-item,
+  .contact-info,
+  .email-info,
+  .address-info {
+    display: none !important;
+  }
+}
+
 /* -------------------- END OF MOBILE VIEW OPTIMIZATION -------------------- */
