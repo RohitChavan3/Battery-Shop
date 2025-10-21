@@ -661,10 +661,7 @@ text-align: center;
 
 /* Hide contact details on mobile view */
 @media (max-width: 768px) {
-  .header-item,
-  .contact-info,
-  .email-info,
-  .address-info {
+   .header-contact{
     display: none !important;
   }
 }
