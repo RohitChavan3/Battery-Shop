@@ -522,3 +522,140 @@ text-align: center;
 .whatsapp-icon:hover {
   transform: scale(1.1);
 }
+
+/* -------------------- MOBILE VIEW OPTIMIZATION -------------------- */
+@media (max-width: 768px) {
+
+  /* 🔹 Top Header Section */
+  .top-header {
+    text-align: center;
+    font-size: 12px;
+    padding: 8px 0;
+    background-color: #0d6efd;
+    color: #fff;
+  }
+  .top-header a,
+  .top-header strong {
+    display: inline-block;
+    margin: 2px 4px;
+  }
+
+  /* 🔹 Header Info Section (Email, Contact, etc.) */
+  .header-box {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .header-item {
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .call-box {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+
+  /* 🔹 Navbar */
+  .navbar {
+    padding: 10px 0;
+    background-color: #0d6efd;
+  }
+
+  .navbar-toggler {
+    border: none;
+    background: #0056b3;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+  }
+
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  /* 🔹 Hero / Video Section */
+  .full-width-video {
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+    background-color: #000;
+  }
+
+  /* 🔹 Section Headings */
+  .choose, .what-we-provide-heading {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 30px 0 15px 0;
+    color: #0056b3;
+  }
+
+  /* 🔹 Buttons below "What We Provide" */
+  .provide-btn {
+    display: inline-block;
+    margin: 5px;
+    padding: 8px 15px;
+    font-size: 14px;
+    background-color: #0d6efd;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+
+  /* 🔹 Cards (for Sale & Services) */
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .card {
+    width: 90%;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 10px;
+  }
+
+  .card-icon {
+    display: block;
+    margin: 0 auto 10px auto;
+    width: 50px;
+    height: 50px;
+  }
+
+  .card h3 {
+    font-size: 1rem;
+    color: #0056b3;
+    text-align: center;
+  }
+
+  .card p {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  /* 🔹 WhatsApp Floating Button */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 70px;
+    right: 15px;
+    z-index: 999;
+  }
+
+  .whatsapp-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  /* 🔹 Footer */
+  footer {
+    font-size: 12px;
+    text-align: center;
+    padding: 15px 10px;
+  }
+}
+/* -------------------- END OF MOBILE VIEW OPTIMIZATION -------------------- */
