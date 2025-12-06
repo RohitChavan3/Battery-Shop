@@ -319,7 +319,7 @@ function closePopup() {
 
 <script>
 // Load companies from database (temporary sample values)
-async function loadCompanies() {
+/*async function loadCompanies() {
     let res = await fetch("/companies");
     let companies = await res.json();
 
@@ -329,11 +329,11 @@ async function loadCompanies() {
     companies.forEach(c => {
         companySelect.innerHTML += `<option value="${c.company_id}">${c.company_name}</option>`;
     });
-}
+}*/
 
 
 // Load models based on company (temporary sample values)
-/*function loadModels() {
+function loadModels() {
     let selected = document.getElementById("companySelect").value;
     let modelSelect = document.getElementById("modelSelect");
 
@@ -352,7 +352,7 @@ async function loadCompanies() {
             modelSelect.innerHTML += `<option value="${m}">${m}</option>`;
         });
     }
-}*/
+}
 
 async function loadModels() {
     let company_id = document.getElementById("companySelect").value;
