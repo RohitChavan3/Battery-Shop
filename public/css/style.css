@@ -666,4 +666,57 @@ text-align: center;
   }
 }
 
+/* Popup Overlay */
+.popup-overlay {
+    display: none;            /* VERY IMPORTANT */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Popup Box */
+.popup-box {
+    background: #fff;
+    padding: 25px;
+    width: 90%;
+    max-width: 450px;
+    border-radius: 8px;
+    text-align: center;
+    animation: pop 0.3s ease-out;
+}
+
+/* Smooth popup animation */
+@keyframes pop {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.btn-submit {
+    background: #0056b3;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+.btn-close {
+    background: #999;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    width: 100%;
+    margin-top: 8px;
+    border-radius: 5px;
+}
+
+
+
 /* -------------------- END OF MOBILE VIEW OPTIMIZATION -------------------- */
