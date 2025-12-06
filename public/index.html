@@ -17,6 +17,28 @@ function showPopup() {
 function closePopup() {
     document.getElementById("modelPopup").style.display = "none";
 }
+
+
+function loadModels() {
+    let selected = document.getElementById("companySelect").value;
+    let modelSelect = document.getElementById("modelSelect");
+
+    let modelsList = {
+        "Honda": ["Activa 6G", "Dio", "Shine", "SP125"],
+        "Hero": ["Splendor", "HF Deluxe", "Glamour"],
+        "TVS": ["Jupiter", "Ntorq", "Apache"],
+        "Bajaj": ["Pulsar", "CT100", "Platina"],
+        "Yamaha": ["FZ", "Fascino", "RayZR"]
+    };
+
+    modelSelect.innerHTML = '<option value="">-- Select Model --</option>';
+
+    if (modelsList[selected]) {
+        modelsList[selected].forEach(m => {
+            modelSelect.innerHTML += `<option value="${m}">${m}</option>`;
+        });
+    }
+}
 </script>
 
 </head>
@@ -333,28 +355,9 @@ function closePopup() {
 
 
 // Load models based on company (temporary sample values)
-function loadModels() {
-    let selected = document.getElementById("companySelect").value;
-    let modelSelect = document.getElementById("modelSelect");
 
-    let modelsList = {
-        "Honda": ["Activa 6G", "Dio", "Shine", "SP125"],
-        "Hero": ["Splendor", "HF Deluxe", "Glamour"],
-        "TVS": ["Jupiter", "Ntorq", "Apache"],
-        "Bajaj": ["Pulsar", "CT100", "Platina"],
-        "Yamaha": ["FZ", "Fascino", "RayZR"]
-    };
 
-    modelSelect.innerHTML = '<option value="">-- Select Model --</option>';
-
-    if (modelsList[selected]) {
-        modelsList[selected].forEach(m => {
-            modelSelect.innerHTML += `<option value="${m}">${m}</option>`;
-        });
-    }
-}
-
-async function loadModels() {
+/*async function loadModels() {
     let company_id = document.getElementById("companySelect").value;
 
     let res = await fetch(`/models?company_id=${company_id}`);
@@ -366,7 +369,7 @@ async function loadModels() {
     models.forEach(m => {
         modelSelect.innerHTML += `<option value="${m.model_id}">${m.model_name}</option>`;
     });
-}
+}*/
 
 
 // Go to battery options page
