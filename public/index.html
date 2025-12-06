@@ -67,7 +67,7 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Batteries</a>
 		    <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="two-wheeler.html">TWO WHEELERS</a></li>
+            <li><a class="dropdown-item" href="javascript:void(0)" onclick="showPopup()">TWO WHEELERS</a></li>
             <li><a class="dropdown-item" href="car_suv_muv.html">CAR/SUV/MUV</a></li>
             <li><a class="dropdown-item" href="superbikes.html">SUPERBIKES</a></li>
 			<li><a class="dropdown-item" href="commertial.html">COMMERTIAL VEHICLES</a></li>
@@ -283,6 +283,120 @@
 <a href="https://wa.me/918390723273" target="_blank" class="whatsapp-float">
   <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp" class="whatsapp-icon">
 </a>
+
+<!-- MODEL SELECT POPUP -->
+<div id="modelPopup" class="popup-overlay">
+    <div class="popup-box">
+
+        <h2>Select Your Model</h2>
+
+        <label>Vehicle Company</label>
+        <select id="companySelect" onchange="loadModels()">
+            <option value="">-- Select Company --</option>
+        </select>
+
+        <label>Vehicle Model</label>
+        <select id="modelSelect">
+            <option value="">-- Select Model --</option>
+        </select>
+
+        <button class="btn-submit" onclick="goToBatteryOptions()">Show Battery Options</button>
+        <button class="btn-close" onclick="closePopup()">Close</button>
+
+    </div>
+</div>
+
+<script>
+function showPopup() {
+    document.getElementById("modelPopup").style.display = "flex";
+    loadCompanies();
+}
+
+function closePopup() {
+    document.getElementById("modelPopup").style.display = "none";
+}
+</script>
+
+<script>
+// Load companies from database (temporary sample values)
+async function loadCompanies() {
+    let res = await fetch("/companies");
+    let companies = await res.json();
+
+    let companySelect = document.getElementById("companySelect");
+    companySelect.innerHTML = '<option value="">-- Select Company --</option>';
+
+    companies.forEach(c => {
+        companySelect.innerHTML += `<option value="${c.company_id}">${c.company_name}</option>`;
+    });
+}
+
+
+// Load models based on company (temporary sample values)
+/*function loadModels() {
+    let selected = document.getElementById("companySelect").value;
+    let modelSelect = document.getElementById("modelSelect");
+
+    let modelsList = {
+        "Honda": ["Activa 6G", "Dio", "Shine", "SP125"],
+        "Hero": ["Splendor", "HF Deluxe", "Glamour"],
+        "TVS": ["Jupiter", "Ntorq", "Apache"],
+        "Bajaj": ["Pulsar", "CT100", "Platina"],
+        "Yamaha": ["FZ", "Fascino", "RayZR"]
+    };
+
+    modelSelect.innerHTML = '<option value="">-- Select Model --</option>';
+
+    if (modelsList[selected]) {
+        modelsList[selected].forEach(m => {
+            modelSelect.innerHTML += `<option value="${m}">${m}</option>`;
+        });
+    }
+}*/
+
+async function loadModels() {
+    let company_id = document.getElementById("companySelect").value;
+
+    let res = await fetch(`/models?company_id=${company_id}`);
+    let models = await res.json();
+
+    let modelSelect = document.getElementById("modelSelect");
+    modelSelect.innerHTML = '<option value="">-- Select Model --</option>';
+
+    models.forEach(m => {
+        modelSelect.innerHTML += `<option value="${m.model_id}">${m.model_name}</option>`;
+    });
+}
+
+
+// Go to battery options page
+/*function goToBatteryOptions() {
+    const company = document.getElementById("companySelect").value;
+    const model = document.getElementById("modelSelect").value;
+
+    if (!company || !model) {
+        alert("Please select both company and model!");
+        return;
+    }
+
+    window.location.href = `battery-options.html?company=${company}&model=${model}`;
+}*/
+
+function goToBatteryOptions() {
+    const company = document.getElementById("companySelect").value;
+    const model = document.getElementById("modelSelect").value;
+
+    if (!company || !model) {
+        alert("Please select both company and model!");
+        return;
+    }
+
+    window.location.href = `battery-options.html?model_id=${model}`;
+}
+
+</script>
+
+
 
   
   
