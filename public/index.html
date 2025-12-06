@@ -8,7 +8,16 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <link rel="stylesheet" href="/css/style.css">
   
-  
+<script>
+function showPopup() {
+    document.getElementById("modelPopup").style.display = "flex";
+    loadCompanies();
+}
+
+function closePopup() {
+    document.getElementById("modelPopup").style.display = "none";
+}
+</script>
 
 </head>
 <body>
@@ -306,16 +315,7 @@
     </div>
 </div>
 
-<script>
-function showPopup() {
-    document.getElementById("modelPopup").style.display = "flex";
-    loadCompanies();
-}
 
-function closePopup() {
-    document.getElementById("modelPopup").style.display = "none";
-}
-</script>
 
 <script>
 // Load companies from database (temporary sample values)
