@@ -28,6 +28,9 @@ function loadCompanies() {
     companies.forEach(company => {
         select.innerHTML += `<option value="${company}">${company}</option>`;
 		});
+}
+
+function loadModels() {
     let selected = document.getElementById("companySelect").value;
     let modelSelect = document.getElementById("modelSelect");
 
@@ -47,6 +50,7 @@ function loadCompanies() {
         });
     }
 }
+
 </script>
 
 </head>
