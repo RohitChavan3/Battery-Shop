@@ -19,7 +19,7 @@ function closePopup() {
 }
 
 
-function loadCompanies() {
+/*function loadCompanies() {
 	let companies = ["Honda", "Hero", "TVS", "Bajaj", "Yamaha"];
     let select = document.getElementById("companySelect");
 
@@ -50,7 +50,36 @@ function loadModels() {
         });
     }
 
+}*/
+
+function loadCompanies() {
+    fetch("http://localhost:5000/api/companies")
+        .then(res => res.json())
+        .then(data => {
+            let select = document.getElementById("companySelect");
+            select.innerHTML = `<option value="">-- Select Company --</option>`;
+
+            data.forEach(c => {
+                select.innerHTML += `<option value="${c.company_id}">${c.company_name}</option>`;
+            });
+        });
 }
+
+function loadModels() {
+    let companyId = document.getElementById("companySelect").value;
+
+    fetch(`http://localhost:5000/api/models/${companyId}`)
+        .then(res => res.json())
+        .then(data => {
+            let select = document.getElementById("modelSelect");
+            select.innerHTML = `<option value="">-- Select Model --</option>`;
+
+            data.forEach(m => {
+                select.innerHTML += `<option value="${m.model_id}">${m.model_name}</option>`;
+            });
+        });
+}
+
 
 
 function goToBatteryOptions() {
