@@ -51,6 +51,21 @@ function loadModels() {
     }
 
 }
+
+
+function goToBatteryOptions() {
+    const company = document.getElementById("companySelect").value;
+    const model = document.getElementById("modelSelect").value;
+
+    if (!company || !model) {
+        alert("Please select both company and model!");
+        return;
+    }
+
+    // Redirect with query string
+    window.location.href = `battery-options.html?company=${encodeURIComponent(company)}&model=${encodeURIComponent(model)}`;
+}
+
 </script>
 
 </head>
