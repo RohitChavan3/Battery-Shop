@@ -1,18 +1,26 @@
-/* Table Styling */
-.battery-table {
-    width: 100%;
-    margin-top: 30px;
+.battery-container {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 20px;
 }
-.battery-table th {
+
+.table thead th {
     background: #0056b3;
     color: white;
     text-align: center;
+    font-size: 16px;
 }
-.battery-table td {
-    text-align: center;
+
+.table tbody td {
     vertical-align: middle;
+    text-align: center;
+    font-size: 15px;
+    padding: 12px;
 }
-.battery-table img {
+
+.battery-img {
     width: 120px;
     height: auto;
+    border-radius: 8px;
 }
+

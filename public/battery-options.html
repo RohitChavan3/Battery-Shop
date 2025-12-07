@@ -16,21 +16,29 @@
 <h2 id="titleText">Available Batteries</h2>
 <hr>
 
-<table class="table table-bordered battery-table">
-    <thead>
-        <tr>
-            <th>Battery Image</th>
-            <th>Model</th>
-            <th>Capacity</th>
-            <th>Warranty</th>
-            <th>Price</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody id="batteryList">
-        <!-- Batteries loaded from database will appear here -->
-    </tbody>
-</table>
+<div class="battery-container">
+
+    <h2 id="titleText">Available Battery Options</h2>
+    <hr>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Battery Model</th>
+                <th>AH</th>
+                <th>Warranty</th>
+                <th>Price</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody id="batteryList">
+            <!-- Data loads here -->
+        </tbody>
+    </table>
+
+</div>
+
 
 <script>
 // ----------------------------------------------
