@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="/css/style.css">
   
 <script>
+window.onload = function() {
 function showPopup() {
     document.getElementById("modelPopup").style.display = "flex";
     loadCompanies();
@@ -49,8 +50,10 @@ function loadModels() {
             modelSelect.innerHTML += `<option value="${m}">${m}</option>`;
         });
     }
-}
 
+}
+window.loadModels = loadModels;
+}
 </script>
 
 </head>
@@ -352,62 +355,7 @@ function loadModels() {
 
 
 <script>
-// Load companies from database (temporary sample values)
-/*async function loadCompanies() {
-    let res = await fetch("/companies");
-    let companies = await res.json();
 
-    let companySelect = document.getElementById("companySelect");
-    companySelect.innerHTML = '<option value="">-- Select Company --</option>';
-
-    companies.forEach(c => {
-        companySelect.innerHTML += `<option value="${c.company_id}">${c.company_name}</option>`;
-    });
-}*/
-
-
-// Load models based on company (temporary sample values)
-
-
-/*async function loadModels() {
-    let company_id = document.getElementById("companySelect").value;
-
-    let res = await fetch(`/models?company_id=${company_id}`);
-    let models = await res.json();
-
-    let modelSelect = document.getElementById("modelSelect");
-    modelSelect.innerHTML = '<option value="">-- Select Model --</option>';
-
-    models.forEach(m => {
-        modelSelect.innerHTML += `<option value="${m.model_id}">${m.model_name}</option>`;
-    });
-}*/
-
-
-// Go to battery options page
-/*function goToBatteryOptions() {
-    const company = document.getElementById("companySelect").value;
-    const model = document.getElementById("modelSelect").value;
-
-    if (!company || !model) {
-        alert("Please select both company and model!");
-        return;
-    }
-
-    window.location.href = `battery-options.html?company=${company}&model=${model}`;
-}*/
-
-/*function goToBatteryOptions() {
-    const company = document.getElementById("companySelect").value;
-    const model = document.getElementById("modelSelect").value;
-
-    if (!company || !model) {
-        alert("Please select both company and model!");
-        return;
-    }
-
-    window.location.href = `battery-options.html?model_id=${model}`;
-}*/
 
 </script>
 
