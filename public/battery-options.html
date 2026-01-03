@@ -32,7 +32,7 @@
                 <th>Description</th>
             </tr>
         </thead>
-        <tbody id="batteryList">
+        <tbody id="batteryTableBody">
             <!-- Data loads here -->
         </tbody>
     </table>
@@ -41,46 +41,37 @@
 
 
 <script>
-// ----------------------------------------------
-// 1. GET company + model FROM URL
-// ----------------------------------------------
 const params = new URLSearchParams(window.location.search);
-const company = params.get("company");
-const model = params.get("model");
+const companyId = params.get("company");
+const modelId = params.get("model");
 
-// Set title text:
-document.getElementById("titleText").innerText = 
-    `Battery Options for ${company} - ${model}`;
+fetch(`http://localhost:5000/api/batteries?companyId=${companyId}&modelId=${modelId}`)
+  .then(res => res.json())
+  .then(data => {
+    const table = document.getElementById("batteryTableBody");
+    table.innerHTML = "";
 
-// ----------------------------------------------
-// 2. CALL NODE.JS API TO FETCH BATTERIES
-// ----------------------------------------------
-fetch(`/api/batteries?company=${company}&model=${model}`)
-    .then(res => res.json())
-    .then(data => {
-        const tbody = document.getElementById("batteryList");
-        tbody.innerHTML = "";
+    if (data.length === 0) {
+      table.innerHTML = `<tr><td colspan="6">No batteries found</td></tr>`;
+      return;
+    }
 
-        if (data.length === 0) {
-            tbody.innerHTML = `<tr><td colspan="6">No battery options found.</td></tr>`;
-            return;
-        }
-
-        data.forEach(b => {
-            tbody.innerHTML += `
-                <tr>
-                    <td><img src="${b.ImageUrl}" alt="Battery"></td>
-                    <td>${b.BatteryName}</td>
-                    <td>${b.Capacity}</td>
-                    <td>${b.Warranty}</td>
-                    <td>${b.Price}</td>
-                    <td>${b.Description}</td>
-                </tr>
-            `;
-        });
-    })
-    .catch(err => console.error("Error loading batteries:", err));
+    data.forEach(b => {
+      table.innerHTML += `
+        <tr>
+          <td><img src="${b.ImageUrl}" width="100"></td>
+          <td>${b.Brand} ${b.BatteryName}</td>
+          <td>${b.CapacityAh}</td>
+          <td>${b.WarrantyMonths} Months</td>
+          <td>₹${b.Price}</td>
+          <td>${b.Specs || "-"}</td>
+        </tr>
+      `;
+    });
+  })
+  .catch(err => console.error(err));
 </script>
+
 
 </body>
 </html>

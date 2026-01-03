@@ -31,4 +31,39 @@ app.get("/api/models/:companyId", async (req, res) => {
     }
 });
 
+app.get("/api/batteries", async (req, res) => {
+    const { companyId, modelId } = req.query;
+
+    if (!companyId || !modelId) {
+        return res.status(400).json({ message: "companyId and modelId required" });
+    }
+
+    try {
+        const result = await sql.query`
+            SELECT 
+                BatteryId,
+                Brand,
+                BatteryName,
+                CapacityAh,
+                WarrantyMonths,
+                Price,
+                ImageUrl,
+                Specs
+            FROM Batteries
+            WHERE Company_Id = ${companyId}
+              AND Model_Id = ${modelId}
+              AND IsActive = 1
+            ORDER BY Price ASC
+        `;
+
+        res.json(result.recordset);
+    } catch (err) {
+        console.error("Battery API error:", err);
+        res.status(500).json({ error: "Failed to fetch batteries" });
+    }
+});
+
+
+
+
 app.listen(5000, () => console.log("Server running on port 5000"));
