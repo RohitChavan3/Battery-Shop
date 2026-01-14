@@ -20,22 +20,14 @@
 
     <h2 id="titleText">Available Battery Options</h2>
     <hr>
+	
+	<div class="container mt-4">
+  <div class="row" id="batteryCards">
+    <!-- Battery cards will load here -->
+  </div>
+</div>
 
-    <table class="table table-bordered table-striped">
-        <thead>
-            <tr>
-                <th>Image</th>
-                <th>Battery Model</th>
-                <th>AH</th>
-                <th>Warranty</th>
-                <th>Price</th>
-                <th>Description</th>
-            </tr>
-        </thead>
-        <tbody id="batteryTableBody">
-            <!-- Data loads here -->
-        </tbody>
-    </table>
+
 
 </div>
 
@@ -47,30 +39,50 @@ const modelId = params.get("model");
 
 fetch(`http://localhost:5000/api/batteries?companyId=${companyId}&modelId=${modelId}`)
   .then(res => res.json())
-  .then(data => {
-    const table = document.getElementById("batteryTableBody");
-    table.innerHTML = "";
+  .then(batteries => {
+    const container = document.getElementById("batteryCards");
+    container.innerHTML = "";
 
-    if (data.length === 0) {
-      table.innerHTML = `<tr><td colspan="6">No batteries found</td></tr>`;
+    if (!batteries.length) {
+      container.innerHTML = `<p class="text-center">No batteries available</p>`;
       return;
     }
 
-    data.forEach(b => {
-      table.innerHTML += `
-        <tr>
-          <td><img src="${b.ImageUrl}" width="100"></td>
-          <td>${b.Brand} ${b.BatteryName}</td>
-          <td>${b.CapacityAh}</td>
-          <td>${b.WarrantyMonths} Months</td>
-          <td>₹${b.Price}</td>
-          <td>${b.Specs || "-"}</td>
-        </tr>
+    batteries.forEach(b => {
+      container.innerHTML += `
+        <div class="col-md-6 col-lg-4">
+          <div class="battery-card">
+
+            <img src="${b.ImageUrl}" class="battery-img" alt="${b.BatteryName}">
+
+            <div class="battery-title">
+              ${b.Brand} ${b.BatteryName}
+            </div>
+
+            <div class="battery-meta">
+              ${b.CapacityAh}Ah • ${b.WarrantyMonths} Months Warranty
+            </div>
+
+            <div class="battery-price">
+              ₹${b.Price}
+            </div>
+
+            <div class="battery-meta">
+              ${b.Specs || ""}
+            </div>
+
+            <a href="tel:9876543210" class="btn btn-success w-100 order-btn">
+              Call to Order
+            </a>
+
+          </div>
+        </div>
       `;
     });
   })
-  .catch(err => console.error(err));
+  .catch(err => console.error("Battery fetch error:", err));
 </script>
+
 
 
 </body>
