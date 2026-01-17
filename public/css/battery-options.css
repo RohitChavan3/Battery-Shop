@@ -45,3 +45,86 @@
   padding-right: 0;
 }
 
+nav {
+  background-color: #222;
+  color: white;
+  padding: 1rem 0;
+    display: flex;
+
+}
+
+nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  color: black;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+  padding-right: 50px;
+  padding-left: 50px;
+  /*background-color: white;*/
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: center;  /* Center the items horizontally */
+  align-items: center;      /* Align items vertically in the center */
+  padding: 0px 0;   /* Add some padding around the navbar */
+  gap: 30px;
+  background: linear-gradient(270deg, #000000, #1a1a1a, #333333, #000000);
+  animation: animateBlack 10s ease infinite;
+  background-size: 600% 600%;
+
+}
+
+.nav-link {
+  font-weight: bold;     /* Makes the text bold */
+  font-size: 18px;       /* Adjusts the text size (you can change it to 20px, 24px, etc.) */
+  color: #000000;    /* Optional: ensures the text is black */
+  font-family: 'Arial', sans-seri;
+}
+
+.navbar-nav{
+gap: 50px;
+}
+
+.navcontainer{
+  display: flex;
+  padding: 10px 120px; /* top/bottom 10px, left/right 120px */
+  background-color: white;
+  align-items: center;
+ /* background: linear-gradient(270deg, #1e90ff, #4169e1, #00008b);
+  background-size: 600% 600%;
+  animation: gradientShift 8s ease infinite;
+  border: 1px solid black;*/
+  
+}
+/*
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}*/
+
+/* Header */
+header {
+  /*background-color: #f5b400;*/
+  /*background-color: rgb(55, 55, 55);*/
+  background: linear-gradient(270deg, #000000, #1a1a1a, #333333, #000000);
+  animation: animateBlack 10s ease infinite;
+  background-size: 600% 600%;
+  color: white;
+  padding: 0rem 0rem;
+}
+
+@keyframes animateBlack {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
