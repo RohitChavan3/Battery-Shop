@@ -9,14 +9,29 @@
   <link rel="stylesheet" href="/css/style.css">
   
 <script>
-function showPopup() {
+function openPopup() {
+  document.getElementById("batteryPopup").style.display = "flex";
+}
+
+function closePopup() {
+  document.getElementById("batteryPopup").style.display = "none";
+}
+
+/* Call this when your page loads */
+window.onload = function () {
+  loadCompanies();
+};
+
+
+
+/*function showPopup() {
     document.getElementById("modelPopup").style.display = "flex";
     loadCompanies();
 }
 
 function closePopup() {
     document.getElementById("modelPopup").style.display = "none";
-}
+}*/
 
 
 /*function loadCompanies() {
@@ -154,7 +169,7 @@ function goToBatteryOptions() {
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Batteries</a>
 		    <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="javascript:void(0)" onclick="showPopup()">TWO WHEELERS</a></li>
+            <li><a class="dropdown-item" href="javascript:void(0)" class="btn btn-danger" onclick="openPopup()">TWO WHEELERS</a></li>
             <li><a class="dropdown-item" href="car_suv_muv.html">CAR/SUV/MUV</a></li>
             <li><a class="dropdown-item" href="superbikes.html">SUPERBIKES</a></li>
 			<li><a class="dropdown-item" href="commertial.html">COMMERTIAL VEHICLES</a></li>
@@ -372,7 +387,7 @@ function goToBatteryOptions() {
 </a>
 
 <!-- MODEL SELECT POPUP -->
-<div id="modelPopup" class="popup-overlay">
+<!-- <div id="modelPopup" class="popup-overlay">
     <div class="popup-box">
 
         <h2>Select Your Model</h2>
@@ -390,7 +405,34 @@ function goToBatteryOptions() {
         <button class="btn-submit" onclick="goToBatteryOptions()">Show Battery Options</button>
         <button class="btn-close" onclick="closePopup()">Close</button>
 
+    </div> -->
+	
+<!-- Battery Popup Modal -->
+<div id="batteryPopup" class="popup-overlay">
+  <div class="popup-card">
+
+    <span class="popup-close" onclick="closePopup()">×</span>
+
+    <h4 class="popup-title">Select Your Two-Wheeler</h4>
+
+    <div class="popup-form">
+      <label>Company</label>
+      <select id="companySelect" class="form-select" onchange="loadModels()">
+        <option value="">-- Select Company --</option>
+      </select>
+
+      <label class="mt-3">Model</label>
+      <select id="modelSelect" class="form-select">
+        <option value="">-- Select Model --</option>
+      </select>
+
+      <button class="btn btn-primary w-100 mt-4" onclick="goToBatteryOptions()">
+        Show Battery Options
+      </button>
     </div>
+
+  </div>
+</div>
 </div>
 
 
