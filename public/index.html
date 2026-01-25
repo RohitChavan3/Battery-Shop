@@ -11,16 +11,14 @@
 <script>
 function openPopup() {
   document.getElementById("batteryPopup").style.display = "flex";
+  loadCompanies();
 }
 
 function closePopup() {
   document.getElementById("batteryPopup").style.display = "none";
 }
 
-/* Call this when your page loads */
-window.onload = function () {
-  loadCompanies();
-};
+
 
 
 
