@@ -142,7 +142,7 @@ fetch(`http://localhost:5000/api/batteries?companyId=${companyId}&modelId=${mode
         <div class="col-md-6 col-lg-4">
           <div class="battery-card">
 
-            <img src="${b.ImageUrl}" class="battery-img" alt="${b.BatteryName}">
+            <img src="http://localhost:5000/${b.ImageUrl}" class="battery-img" alt="${b.BatteryName}" onerror="this.src='/images/default-battery.jpg'">
 
             <div class="battery-title">
               ${b.Brand} ${b.BatteryName}
