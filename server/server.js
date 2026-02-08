@@ -3,9 +3,14 @@ const cors = require("cors");
 const sql = require("mssql");
 const dbConfig = require("./db");
 
+
 const app = express();
 app.use(cors());
 app.use(express.json());
+const path = require("path");
+
+app.use("/images", express.static(path.join(__dirname, "../public/images")));
+
 
 sql.connect(dbConfig).catch(err => console.log(err));
 
